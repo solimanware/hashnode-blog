@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+*{
+  font-family: 'Vazirmatn', sans-serif !important;
+}
+
 
 .article-width {
   width: 800px;
