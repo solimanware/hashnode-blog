@@ -14,6 +14,7 @@ module.exports = {
 			fontFamily: {
 				sans: [fontInterVar, ...defaultTheme.fontFamily.sans],
 				heading: [fontPlusJakartaVar, ...defaultTheme.fontFamily.sans],
+				vazirmatn: ['Vazirmatn', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				'accent-1': '#FAFAFA',

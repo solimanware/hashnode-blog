@@ -59,7 +59,6 @@ export const PostHeader = ({ post, morePosts }: Props) => {
 					return match.replace(/>$/, ' dir="auto">');
 				}
 			});
-			console.log(newHTML);
 
 			return { ...post, content: { ...post.content, html: newHTML } };
 		};
