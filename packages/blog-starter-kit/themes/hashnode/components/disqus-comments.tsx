@@ -11,7 +11,7 @@ function DisqusComments({ post }: { post: PostFullFragment; }) {
   return (
     <div className="container mx-auto px-2 md:px-4 md:py-1 2xl:px-10">
       <DiscussionEmbed
-        shortname="solimanware"
+        shortname="soliman-ai"
         config={config}
       />
     </div>
