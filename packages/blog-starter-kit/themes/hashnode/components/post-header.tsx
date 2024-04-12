@@ -48,8 +48,23 @@ export const PostHeader = ({ post, morePosts }: Props) => {
 	const toc = post.features?.tableOfContents?.isEnabled
 		? post.features?.tableOfContents?.items.flat()
 		: [];
+		const addDirAutoToEveryHTMLTag = (post: PostFullFragment) => {
+			const newHTML = post.content.html.replace(/<([^>]*)(?<!dir="auto")>/g, function (match) {
+				// Check if the tag already has a 'dir' attribute
+				if (match.includes('dir=')) {
+					// If it does, don't add 'dir="auto"'
+					return match;
+				} else {
+					// If it doesn't, add 'dir="auto"' before the closing '>'
+					return match.replace(/>$/, ' dir="auto">');
+				}
+			});
+			console.log(newHTML);
+
+			return { ...post, content: { ...post.content, html: newHTML } };
+		};
 	const memoizedPostContent = useMemo(
-		() => imageReplacer(post.content?.html, true),
+		() => imageReplacer(addDirAutoToEveryHTMLTag(post).content?.html, true),
 		[post.content?.html],
 	);
 	const [showCommentsSheet, setShowCommentsSheet] = useState(false);

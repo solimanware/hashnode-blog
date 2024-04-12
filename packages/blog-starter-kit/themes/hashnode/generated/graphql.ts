@@ -3066,6 +3066,22 @@ export type RestorePostPayload = {
   post?: Maybe<Post>;
 };
 
+export type RoleBasedInvite = Node & {
+  __typename?: 'RoleBasedInvite';
+  /** The capacity of how many members to be invited by the link. */
+  capacity?: Maybe<Scalars['Int']['output']>;
+  /** The expiry date of the invite. */
+  expiryDate?: Maybe<Scalars['DateTime']['output']>;
+  /** The ID of the role based invite. */
+  id: Scalars['ID']['output'];
+  /** Invite link of the role based invite. */
+  inviteLink?: Maybe<Scalars['String']['output']>;
+  /** Boolean that signifies if the invite has unlimited capacity. */
+  isUnlimitedCapacity?: Maybe<Scalars['Boolean']['output']>;
+  /** The role assigned to the user in the publication. */
+  role: UserPublicationRole;
+};
+
 /** Information to help in seo related meta tags. */
 export type Seo = {
   __typename?: 'SEO';
@@ -3120,6 +3136,7 @@ export enum Scope {
   DocsEditorOrOwner = 'docs_editor_or_owner',
   DocsOwner = 'docs_owner',
   ImportSubscribersToPublication = 'import_subscribers_to_publication',
+  InvitedTeamUser = 'invited_team_user',
   PublicationAdmin = 'publication_admin',
   PublicationMember = 'publication_member',
   PublishComment = 'publish_comment',

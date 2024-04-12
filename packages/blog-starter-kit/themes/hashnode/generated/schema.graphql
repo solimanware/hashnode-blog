@@ -2906,6 +2906,21 @@ type RestorePostPayload {
   post: Post
 }
 
+type RoleBasedInvite implements Node {
+  """The capacity of how many members to be invited by the link."""
+  capacity: Int
+  """The expiry date of the invite."""
+  expiryDate: DateTime
+  """The ID of the role based invite."""
+  id: ID!
+  """Invite link of the role based invite."""
+  inviteLink: String
+  """Boolean that signifies if the invite has unlimited capacity."""
+  isUnlimitedCapacity: Boolean
+  """The role assigned to the user in the publication."""
+  role: UserPublicationRole!
+}
+
 """Information to help in seo related meta tags."""
 type SEO {
   """The description used in og:description tag for SEO purposes."""
@@ -2963,6 +2978,7 @@ enum Scope {
   docs_editor_or_owner
   docs_owner
   import_subscribers_to_publication
+  invited_team_user
   publication_admin
   publication_member
   publish_comment
