@@ -149,10 +149,10 @@ export default function Series({
 					authorName={publication.author.name}
 					title={publication.title}
 					imprint={publication.imprint}
-					disableFooterBranding={publication.preferences.disableFooterBranding}
+					disableFooterBranding={true}
 					isTeam={publication.isTeam}
 					logo={publication.preferences.logo}
-					darkMode={publication.preferences.darkMode}
+					darkMode={true}
 				/>
 			</Layout>
 		</AppProvider>

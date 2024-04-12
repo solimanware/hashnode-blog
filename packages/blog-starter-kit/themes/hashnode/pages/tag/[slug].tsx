@@ -107,10 +107,10 @@ export default function Post({ publication, posts, tag, slug, currentMenuId }: P
 					authorName={publication.author.name}
 					title={publication.title}
 					imprint={publication.imprint}
-					disableFooterBranding={publication.preferences.disableFooterBranding}
+					disableFooterBranding={true}
 					isTeam={publication.isTeam}
 					logo={publication.preferences.logo}
-					darkMode={publication.preferences.darkMode}
+					darkMode={true}
 				/>
 			</Layout>
 		</AppProvider>
@@ -132,10 +132,10 @@ export const getServerSideProps: any = async (ctx: any) => { // TODO: type needs
   const { data } = await urqlClient
     .query(
       TagInitialDocument,
-      { 
+      {
 		host: process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST,
-		slug: slug, 
-		first: INITIAL_LIMIT, after: null 
+		slug: slug,
+		first: INITIAL_LIMIT, after: null
 	},
       {
         fetchOptions: {

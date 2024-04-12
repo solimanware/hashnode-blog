@@ -77,10 +77,10 @@ const Newsletter = (props: Props) => {
 					authorName={publication.author.name}
 					title={publication.title}
 					imprint={publication.imprint}
-					disableFooterBranding={publication.preferences.disableFooterBranding}
+					disableFooterBranding={true}
 					isTeam={publication.isTeam}
 					logo={publication.preferences.logo}
-					darkMode={publication.preferences.darkMode}
+					darkMode={true}
 				/>
 				) : null}
     </AppProvider>
@@ -144,7 +144,7 @@ export const getServerSideProps: GetServerSideProps<{
 
   const isDarkTheme =
     typeof query.isDarkTheme === 'undefined'
-      ? !!publication.preferences.darkMode?.enabled
+      ? !!true?.enabled
       : query.isDarkTheme === 'true';
   // @ts-ignore
   req.isDarkTheme = isDarkTheme;
