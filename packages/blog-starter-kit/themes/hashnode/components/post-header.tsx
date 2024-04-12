@@ -26,6 +26,7 @@ import { BookOpenSVG } from './icons/svgs';
 // @ts-ignore
 import { triggerCustomWidgetEmbed } from '@starter-kit/utils/trigger-custom-widget-embed';
 import { createPostUrl } from '../utils/urls';
+import DisqusComments from './disqus-comments';
 
 moment.extend(relativeTime);
 moment.extend(localizedFormat);
@@ -305,6 +306,8 @@ export const PostHeader = ({ post, morePosts }: Props) => {
 								list={toc}
 							/>
 						</div>
+
+						<DisqusComments post={post}/>
 
 						{post.publication && post.publication?.features?.newsletter?.isEnabled && (
 							<PublicationSubscribeStandOut />
