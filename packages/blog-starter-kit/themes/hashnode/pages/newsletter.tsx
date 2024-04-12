@@ -144,7 +144,7 @@ export const getServerSideProps: GetServerSideProps<{
 
   const isDarkTheme =
     typeof query.isDarkTheme === 'undefined'
-      ? !!true?.enabled
+      ? !!publication.preferences.darkMode?.enabled
       : query.isDarkTheme === 'true';
   // @ts-ignore
   req.isDarkTheme = isDarkTheme;
